@@ -1,4 +1,4 @@
-# LCAC Governor – Cognitive Integrity Framework  
+# LCAC Governor - Cognitive Integrity Framework  
 **Atom Labs · 2025**
 
 LCAC Governor is a cognitive integrity layer designed to sit in front of any LLM, agent, toolchain, or reasoning system.  
