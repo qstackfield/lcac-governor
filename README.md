@@ -64,15 +64,14 @@ This is the visibility every enterprise wishes they had.
 
 ```mermaid
 flowchart TD
-    A[Client / LLM] --> B[LCAC Governor API]
-    B --> C[Trust Engine]
-    B --> D[Variance Analyzer]
-    B --> E[Ledger & Hash Chain]
-    C --> F[/overview Endpoint]
-    D --> F
-    E --> F
-    F --> G[Console Dashboard]
-```
+  A[Client / LLM] --> B[LCAC Governor API]
+  B --> C[Trust Engine]
+  B --> D[Variance Analyzer]
+  B --> E[Ledger & Hash Chain]
+  C --> F[/overview Endpoint]
+  D --> F
+  E --> F
+  F --> G[Console Dashboard]
 
 ---
 
