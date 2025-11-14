@@ -73,7 +73,6 @@ flowchart TD
   D --> F
   E --> F
   F --> G[Console Dashboard]
-
 ```
 
 ---
