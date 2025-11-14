@@ -1,4 +1,3 @@
-```md
 # LCAC Governor — Cognitive Integrity Framework  
 **Atom Labs · 2025**
 
@@ -339,7 +338,4 @@ For enterprise licensing or partnership inquiries:
 
 ```
 qstackfield@seedcore.io
-```
-
----
 ```
