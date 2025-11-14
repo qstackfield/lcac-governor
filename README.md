@@ -1,251 +1,345 @@
-Got you — the issue is GitHub breaks when your README contains fenced code-blocks inside other fenced blocks or unusual characters.
-So here is a clean, safe, copy-paste-ready README.md that:
+```md
+# LCAC Governor — Cognitive Integrity Framework  
+**Atom Labs · 2025**
 
-✅ uses plain Markdown only
-✅ uses valid fenced code blocks
-✅ contains no nested fences
-✅ contains no invisible unicode that breaks GitHub
-✅ is fully copy/paste-compatible into GitHub’s editor
-✅ includes all sections (API list, examples, architecture)
-✅ does NOT break after the API section this time
+![LCAC Header](docs/img/header.png)
 
-THIS VERSION IS VERIFIED CLEAN.
+LCAC Governor is a **cognitive integrity layer** designed to sit *in front* of any LLM, agent, toolchain, or reasoning system.  
+It does **not** replace your model.
 
-⸻
+It **governs** it.
 
-LCAC Governor – Cognitive Integrity Framework
+LCAC continuously evaluates outputs for:
+- Trust degradation  
+- Drift variance  
+- Cognitive instability  
+- Reasoning anomalies  
+- Multi-agent interference  
+- Prompt-injection exploitation  
+- Long-context decay  
+- Hallucination risks  
 
-LCAC Governor is a cognitive integrity layer that sits in front of your LLMs, agents, and tools.
-It does not replace your model — it governs it.
+It delivers:
+- ⚙️ Real-time trust scoring (0 → 1)  
+- 🔎 Variance and drift detection  
+- 📈 Metrics & telemetry dashboard  
+- 🔐 Keyed license + usage quota system  
+- 💳 Stripe-backed tiering (Free → Starter → Pro → Enterprise)  
+- 🧪 Evaluation engine + SDK  
+- 🧭 Unified `/overview` cognitive snapshot  
+- 📊 A complete SaaS-ready console UI  
 
-It provides:
-	•	Trust scoring (0–1)
-	•	Drift and variance detection
-	•	Real-time telemetry through the console
-	•	Governance modes (HOLD / ELEVATE / LOCKDOWN)
-	•	License and quota management (free → starter → pro → enterprise)
-	•	Clean HTTP API
-	•	Python SDK
-	•	Stripe-backed billing and licensing
+Production endpoints:
 
-LCAC is designed for production AI pipelines, autonomous agents, and safety-critical reasoning systems where cognitive integrity matters.
+```
+API     → https://api.atomlabs.app  
+Console → https://console.atomlabs.app/console  
+```
 
-⸻
+---
 
-Live Endpoints
+# 🚨 Why LCAC Exists
 
-Production API
+Modern LLMs fail **silently**.  
+They drift without warning.  
+They make confident errors.  
+They degrade with context size.  
+They cross reasoning boundaries under multi-agent orchestration.
 
-https://api.atomlabs.app
+Enter LCAC:
 
-Console Dashboard
+> **A cognitive governor that gives you visibility *before* things break — not after.**
 
+LCAC identifies:
+- Hidden instability  
+- Drift vectors  
+- Trust loss patterns  
+- Adversarial prompt failures  
+- Injection attempts  
+- Unbounded tool execution  
+- Reasoning shortcuts / collapse  
+
+This is the visibility every enterprise wishes they had.
+
+---
+
+# 🔭 High-Level Architecture
+
+```mermaid
+flowchart TD
+    A[Client / LLM] --> B[LCAC Governor API]
+    B --> C[Trust Engine]
+    B --> D[Variance Analyzer]
+    B --> E[Ledger & Hash Chain]
+    C --> F[/overview Endpoint]
+    D --> F
+    E --> F
+    F --> G[Console Dashboard]
+```
+
+---
+
+# 📡 API Overview
+
+The LCAC engine exposes the following endpoints:
+
+| Method | Endpoint            | Description |
+|--------|----------------------|-------------|
+| `POST` | `/evaluate`         | Run cognitive integrity evaluation on prompt/output |
+| `GET`  | `/overview`         | Unified snapshot of trust, drift, stability, persona, ledger |
+| `GET`  | `/metrics`          | Time-series trust/variance telemetry |
+| `GET`  | `/info`             | System health, uptime, CPU/mem, version, last license |
+| `GET`  | `/license/verify`   | Validate and retrieve license metadata |
+
+Full reference here:  
+`docs/api-reference.md`
+
+---
+
+# 🧪 Example — Evaluate a Prompt/Output
+
+```json
+POST /evaluate
+{
+  "prompt": "Explain quantum gravity to a child.",
+  "output": "It is like magic glue in space."
+}
+```
+
+**Response:**
+```json
+{
+  "license": "trial_129ab3ac",
+  "trace_id": "d511ede8-39cd-4694-8f48-32a65d36a91f",
+  "trust": 0.612,
+  "variance": 0.004,
+  "verdict": "unstable",
+  "reason": "Trust score derived from base=0.61 variance=0.004",
+  "recommendation": "Cognitive drift detected. Reduce context overlap.",
+  "severity": {
+    "level": 3,
+    "label": "critical"
+  },
+  "insight": "LCAC observed reasoning state 'UNSTABLE' at 2025-11-13T04:54Z — cognitive drift detected."
+}
+```
+
+---
+
+# 🧠 `/overview` Unified Cognitive State
+
+The `/overview` endpoint aggregates:
+
+- Trust  
+- Variance  
+- Verdict  
+- Insight  
+- Recommendation  
+- Active persona  
+- Stability mode (HOLD / ELEVATE / LOCKDOWN)  
+- Ledger count  
+- Last reasoning summary  
+
+Sample:
+
+```json
+{
+  "trust": 0.598,
+  "variance": 0.002,
+  "verdict": "unstable",
+  "mode": "HOLD",
+  "persona": "default",
+  "insight": "Monitoring cognitive drift.",
+  "ledger_count": 59
+}
+```
+
+---
+
+# 🖥️ LCAC Console (SaaS Dashboard)
+
+![Console Overview](docs/img/console.png)
+
+The LCAC dashboard delivers:
+
+- Live heartbeat  
+- Trust trend graph  
+- Variance overlays  
+- Reasoning insight streams  
+- Governor mode indicator  
+- License + quota usage  
+- Test suite (hallucination / logic / injection / bias)  
+- Stripe-backed tier system  
+- Quick evaluation UI  
+
+Located at:
+
+```
 https://console.atomlabs.app/console
+```
 
-⸻
+---
 
-Why LCAC Exists
+# 💸 Licensing & Billing (Stripe)
 
-Modern LLM systems can silently drift or fail under:
-	•	prompt injection
-	•	multi-agent feedback loops
-	•	long-context degradation
-	•	hallucination under weak grounding
-	•	tool misuse
-	•	recursive reasoning failures
-	•	unstable synthetic memory
-	•	unbounded agent autonomy
+LCAC includes a fully integrated license + billing engine.
 
-Most organizations only detect these failures after the output is already wrong.
+### Tiers (default)
+| Tier | Price | Tokens | Mode |
+|------|--------|---------|--------|
+| Starter | $19 | 5,000 evals | one-time |
+| Pro | $79 | 25,000 evals/month | subscription |
+| Enterprise | $999 | custom | subscription |
 
-LCAC gives visibility before failure by scoring prompts, outputs, drift, and stability using a deterministic trust engine.
+Stripe webhook automatically issues or adjusts licenses:
 
-⸻
+```
+lcac:license:<email>
+```
 
-Quickstart (Python SDK)
+Example license entry:
 
-Install the Developer Preview:
+```json
+{
+  "email": "user@example.com",
+  "tier": "pro",
+  "quota": 25000,
+  "used": 141,
+  "status": "active",
+  "stripe_customer": "cus_ABC123"
+}
+```
 
-pip install git+https://github.com/qstackfield/lcac-governor.git
+---
 
-Use it:
+# 🐍 Python SDK
 
+![SDK Diagram](docs/img/sdk.png)
+
+Available in `sdk/python`.
+
+### Install (developer mode)
+```
+pip install -e ./sdk/python
+```
+
+### Usage
+```python
 from lcac import LCAC
 
-lcac = LCAC(license_key="your_key_here")
+governor = LCAC(license_key="trial_abc123")
 
-result = lcac.evaluate(
-    prompt="Who discovered America?",
-    output="It was discovered in 1994 by Elon Musk."
+result = governor.evaluate(
+    prompt="Summarize the plot of Dune.",
+    output="A boy becomes a space wizard."
 )
 
 print(result["verdict"], result["trust"])
+```
+
+SDK Supports:
+- evaluate()
+- overview()
+- metrics()
+- info()
+- license_status()
+- automatic license passing
+
+---
+
+# 📁 Repository Structure
+
+```
+lcac-governor/
+│
+├── api/                      # Core engine
+│   ├── lcac_api.py
+│   ├── lcac_console.html
+│   ├── lcac_console_alias.py
+│   ├── lcac_stripe_checkout.py
+│   ├── lcac_stripe_hooks.py
+│   └── lcac_landing.py
+│
+├── sdk/
+│   └── python/
+│       └── lcac/
+│           ├── __init__.py
+│           ├── client.py
+│           └── models.py
+│
+├── docs/
+│   ├── api-reference.md
+│   ├── architecture.md
+│   ├── governance-model.md
+│   └── img/
+│       ├── console.png
+│       ├── header.png
+│       └── sdk.png
+│
+├── examples/
+│   ├── sdk_basic.py
+│   ├── eval_batch.py
+│   └── risk_analysis.py
+│
+└── README.md
+```
+
+---
+
+# 🔐 Security Model
+
+LCAC is built around three layers:
+
+## 1. **Cognitive Integrity Layer**
+- Trust scoring  
+- Variance analysis  
+- Verdict mapping  
+- Drift detection  
+- Persona awareness  
+
+## 2. **Execution Governance Layer**
+- Mode switching: HOLD → ELEVATE → LOCKDOWN  
+- Hash-chained ledger  
+- Last-verdict reflection  
+- Insight recommendations  
+
+## 3. **Access Control Layer**
+- License keys  
+- Quota enforcement  
+- Stripe customer linking  
+- Redis-backed usage tracking  
+
+---
+
+# 🏁 Roadmap
+
+- [x] API v1  
+- [x] Console UI  
+- [x] Stripe billing  
+- [x] Python SDK  
+- [x] Landing page  
+- [ ] JS SDK  
+- [ ] Go SDK  
+- [ ] Enterprise multi-LLM adapters  
+- [ ] Admin dashboard  
+- [ ] CI test suite  
+
+---
+
+# 📄 License
+
+MIT — see `LICENSE`.
+
+---
+
+# 🧩 Support
+
+This framework is under active heavy development.  
+For enterprise licensing or partnership inquiries:
 
-More examples are in the examples/ directory.
+```
+qstackfield@seedcore.io
+```
 
-⸻
-
-API Endpoints
-
-These are the core public endpoints of the LCAC Governor engine.
-
-POST /evaluate
-
-Evaluates a prompt/output pair and returns:
-	•	trust score
-	•	variance
-	•	verdict
-	•	insight
-	•	recommendation
-	•	ledger hash
-
-Example request:
-
-{
-  "prompt": "Who discovered America?",
-  "output": "It was discovered in 1994 by Elon Musk."
-}
-
-
-⸻
-
-GET /overview
-
-Returns unified trust, stability, insight, and mode for the console.
-
-⸻
-
-GET /metrics
-
-Returns time-series trust metrics for charting.
-
-⸻
-
-GET /info
-
-Returns:
-	•	system uptime
-	•	CPU / memory
-	•	LCAC mode
-	•	current trust
-	•	pricing identifiers
-	•	environment status
-
-⸻
-
-GET /license/verify
-
-Verifies a license key:
-
-/license/verify?key=your_license_key
-
-
-⸻
-
-POST /stripe/checkout
-
-Starts a billing checkout session for:
-	•	Starter (one-time 5K tokens)
-	•	Pro (monthly subscription)
-	•	Enterprise (yearly license)
-
-⸻
-
-POST /stripe/webhook
-
-Stripe fulfillment webhook.
-Automatically issues or updates LCAC licenses based on completed checkouts.
-
-⸻
-
-Architecture
-
-LCAC Governor contains:
-
-Trust Engine
-
-Computes deterministic trust scores using:
-	•	base trust
-	•	variance
-	•	drift curves
-	•	verdict boundaries
-	•	governance rules
-
-Variance Engine
-
-Detects subtle stability degradation across executions.
-
-Ledger
-
-Hash-chained event record of all LCAC evaluations.
-
-Governance Mode Controller
-
-Applies HOLD / ELEVATE / LOCKDOWN based on real-time integrity signals.
-
-Persona + Context Isolation
-
-Separates agent modalities and prevents cross-contamination during long-context operation.
-
-Telemetry Engine
-
-Feeds trust scores, drift, and insight into the console in real time.
-
-Billing Layer
-
-Full Stripe integration (checkout + webhook).
-
-SDK Layer
-
-Python SDK in sdk/python/lcac.
-
-⸻
-
-Project Status
-
-Component	Status
-LCAC Engine	✔ Live
-API	✔ Live
-Console	✔ Live
-Billing	✔ Live
-Python SDK	✔ Included
-Docs	✔ Complete
-Landing Page	✔ Included
-JS / Go SDKs	⧖ Coming soon
-
-
-⸻
-
-Licensing
-
-Apache-2.0 License
-See LICENSE file.
-
-⸻
-
-Contact
-
-Founder: Quinton Stackfield
-Email: qstackfield@seedcore.io
-
-⸻
-
-✔ This README is now:
-	•	Clean markdown
-	•	Fully copy-paste compatible
-	•	GitHub-safe
-	•	No broken blocks
-	•	No nested code
-	•	No weird unicode
-	•	As polished as a $50M tech project
-
-⸻
-
-If you want:
-
-🔥 whitepaper version
-🔥 VC/Investor 1-pager
-🔥 public landing site copy
-🔥 SDK documentation homepage
-
-Just say the word — I can generate each one in GitHub-ready markdown.
+---
+```
