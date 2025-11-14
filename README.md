@@ -26,9 +26,7 @@ It delivers:
 - Unified `/overview` cognitive snapshot  
 - A complete SaaS-ready console UI  
 
-Production endpoints:
 
-```
 ### Production API Base
 The LCAC Governor API is served from:
 
