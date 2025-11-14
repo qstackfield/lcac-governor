@@ -157,7 +157,7 @@ Live at:
 https://console.atomlabs.app/console
 ```
 
-![LCAC Console](docs/img/docs/img/lcac-console.png)
+![Console Overview](docs/img/lcac-console.png
 
 ```
 
