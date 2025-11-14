@@ -68,7 +68,8 @@ Enterprises use LCAC as a cognitive safety guardrail.
 
 # High-Level Architecture
 
-```mermaid
+```
+mermaid
 flowchart TD
   A[Client / LLM] --> B[LCAC Governor API]
   B --> C[Trust Engine]
