@@ -47,7 +47,7 @@ They cross reasoning boundaries under multi-agent orchestration.
 
 Enter LCAC:
 
-> **A cognitive governor that gives you visibility *before* things break — not after.**
+> **A cognitive governor that gives you visibility *before* things break - not after.**
 
 LCAC identifies:
 - Hidden instability  
@@ -95,7 +95,7 @@ Full reference here:
 
 ---
 
-# Example — Evaluate a Prompt/Output
+# Example - Evaluate a Prompt/Output
 
 ```json
 POST /evaluate
@@ -246,7 +246,7 @@ SDK Supports:
 
 ---
 
-# 📁 Repository Structure
+# Repository Structure
 
 ```
 lcac-governor/
@@ -325,17 +325,17 @@ LCAC is built around three layers:
 
 ---
 
-# 📄 License
+# License
 
 MIT — see `LICENSE`.
 
 ---
 
-# 🧩 Support
+# Support
 
 This framework is under active heavy development.  
 For enterprise licensing or partnership inquiries:
 
 ```
-qstackfield@seedcore.io
+lcac@atomlabs.app
 ```
