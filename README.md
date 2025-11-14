@@ -157,7 +157,7 @@ Sample:
 
 # LCAC Console (SaaS Dashboard)
 
-![Console Overview](docs/img/console.png)
+![Console Overview](docs/img/lcac-console.png)
 
 The LCAC dashboard delivers:
 
