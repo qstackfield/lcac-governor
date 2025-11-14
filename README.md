@@ -73,6 +73,8 @@ flowchart TD
   E --> F
   F --> G[Console Dashboard]
 
+```
+
 ---
 
 # API Overview
