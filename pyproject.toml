@@ -5,16 +5,24 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "lcac-sdk"
 version = "1.0.0"
-description = "LCAC Governor Python SDK — Cognitive Integrity Engine"
-readme = "README.md"
+description = "LCAC Cognitive Integrity SDK — Python client for https://api.atomlabs.app"
+readme = "../README.md"
 requires-python = ">=3.8"
-
 license = { text = "Apache-2.0" }
 
 authors = [
   { name = "Quinton Stackfield", email = "qstackfield@seedcore.io" }
 ]
 
+dependencies = [
+  "requests>=2.24.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/qstackfield/lcac-governor"
+Documentation = "https://github.com/qstackfield/lcac-governor/tree/main/docs"
+Issues = "https://github.com/qstackfield/lcac-governor/issues"
+Source = "https://github.com/qstackfield/lcac-governor"
 dependencies = ["requests>=2.24.0"]
 
 [project.urls]
