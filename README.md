@@ -235,7 +235,6 @@ SDK Methods:
 - info()  
 - license_status()
 
-``
 ![SDK Evaluation](docs/img/lcac-sdk-eval.png)
 
 ---
