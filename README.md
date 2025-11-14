@@ -233,7 +233,9 @@ SDK Methods:
 - overview()  
 - metrics()  
 - info()  
-- license_status()  
+- license_status()
+
+![SDK Evaluation](docs/img/lcac-sdk-eval.png)
 
 ---
 
