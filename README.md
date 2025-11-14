@@ -156,11 +156,7 @@ Live at:
 ``
 `![Console Overview](docs/img/lcac-console.png)
 
-```
 
-<p align="center">
-  <img src="docs/img/lcac-console.png" width="880"/>
-</p>
 
 The dashboard includes:
 
