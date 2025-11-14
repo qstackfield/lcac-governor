@@ -327,7 +327,7 @@ LCAC is built around three layers:
 
 # License
 
-MIT — see `LICENSE`.
+MIT - see `LICENSE`.
 
 ---
 
