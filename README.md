@@ -19,14 +19,14 @@ LCAC continuously evaluates outputs for:
 - Hallucination risks  
 
 It delivers:
-- ⚙️ Real-time trust scoring (0 → 1)  
-- 🔎 Variance and drift detection  
-- 📈 Metrics & telemetry dashboard  
-- 🔐 Keyed license + usage quota system  
-- 💳 Stripe-backed tiering (Free → Starter → Pro → Enterprise)  
-- 🧪 Evaluation engine + SDK  
-- 🧭 Unified `/overview` cognitive snapshot  
-- 📊 A complete SaaS-ready console UI  
+- Real-time trust scoring (0 → 1)  
+- Variance and drift detection  
+- Metrics & telemetry dashboard  
+- Keyed license + usage quota system  
+- Stripe-backed tiering (Free → Starter → Pro → Enterprise)  
+- Evaluation engine + SDK  
+- Unified `/overview` cognitive snapshot  
+- A complete SaaS-ready console UI  
 
 Production endpoints:
 
@@ -37,7 +37,7 @@ Console → https://console.atomlabs.app/console
 
 ---
 
-# 🚨 Why LCAC Exists
+# Why LCAC Exists
 
 Modern LLMs fail **silently**.  
 They drift without warning.  
@@ -62,7 +62,7 @@ This is the visibility every enterprise wishes they had.
 
 ---
 
-# 🔭 High-Level Architecture
+# High-Level Architecture
 
 ```mermaid
 flowchart TD
@@ -78,7 +78,7 @@ flowchart TD
 
 ---
 
-# 📡 API Overview
+# API Overview
 
 The LCAC engine exposes the following endpoints:
 
@@ -95,7 +95,7 @@ Full reference here:
 
 ---
 
-# 🧪 Example — Evaluate a Prompt/Output
+# Example — Evaluate a Prompt/Output
 
 ```json
 POST /evaluate
@@ -125,7 +125,7 @@ POST /evaluate
 
 ---
 
-# 🧠 `/overview` Unified Cognitive State
+# `/overview` Unified Cognitive State
 
 The `/overview` endpoint aggregates:
 
@@ -155,7 +155,7 @@ Sample:
 
 ---
 
-# 🖥️ LCAC Console (SaaS Dashboard)
+# LCAC Console (SaaS Dashboard)
 
 ![Console Overview](docs/img/console.png)
 
@@ -179,7 +179,7 @@ https://console.atomlabs.app/console
 
 ---
 
-# 💸 Licensing & Billing (Stripe)
+# Licensing & Billing (Stripe)
 
 LCAC includes a fully integrated license + billing engine.
 
@@ -211,7 +211,7 @@ Example license entry:
 
 ---
 
-# 🐍 Python SDK
+# Python SDK
 
 ![SDK Diagram](docs/img/sdk.png)
 
@@ -285,7 +285,7 @@ lcac-governor/
 
 ---
 
-# 🔐 Security Model
+# Security Model
 
 LCAC is built around three layers:
 
@@ -310,7 +310,7 @@ LCAC is built around three layers:
 
 ---
 
-# 🏁 Roadmap
+# Roadmap
 
 - [x] API v1  
 - [x] Console UI  
