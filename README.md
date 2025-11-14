@@ -161,8 +161,6 @@ https://console.atomlabs.app/console
   <img src="docs/img/lcac-console.png" width="880"/>
 </p>
 
-```
-
 The dashboard includes:
 
 - System heartbeat  
