@@ -213,7 +213,7 @@ Example license entry:
 
 # Python SDK
 
-![SDK Diagram](docs/img/sdk.png)
+![SDK Diagram](docs/img/lcac-sdk-eval.png)
 
 Available in `sdk/python`.
 
