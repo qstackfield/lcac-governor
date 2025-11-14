@@ -1,4 +1,4 @@
-# LCAC Governor — Cognitive Integrity Framework  
+# LCAC Governor - Cognitive Integrity Framework  
 **Atom Labs · 2025**
 
 ![LCAC Header](docs/img/header.png)
