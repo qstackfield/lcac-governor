@@ -157,10 +157,8 @@ Live at:
 https://console.atomlabs.app/console
 ```
 
-Screenshot placeholder (replace with your image):
-
-```
 ![LCAC Console](docs/img/docs/img/lcac-console.png)
+
 ```
 
 The dashboard includes:
