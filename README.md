@@ -62,7 +62,8 @@ This is the visibility every enterprise wishes they had.
 
 # High-Level Architecture
 
-```mermaid
+```
+mermaid
 flowchart TD
   A[Client / LLM] --> B[LCAC Governor API]
   B --> C[Trust Engine]
