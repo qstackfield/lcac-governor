@@ -33,11 +33,11 @@ The LCAC Governor API is served from:
 **Base URL:** `https://api.atomlabs.app`
 
 **Key endpoints:**
-- `GET https://api.atomlabs.app/info` — system health, uptime, prices
-- `GET https://api.atomlabs.app/overview` — trust, variance, drift, verdict
-- `GET https://api.atomlabs.app/metrics` — live telemetry
-- `POST https://api.atomlabs.app/evaluate` — core trust evaluation
-- `GET https://api.atomlabs.app/license/verify?key=XYZ` — license validation
+- `GET https://api.atomlabs.app/info` - system health, uptime, prices
+- `GET https://api.atomlabs.app/overview` - trust, variance, drift, verdict
+- `GET https://api.atomlabs.app/metrics` - live telemetry
+- `POST https://api.atomlabs.app/evaluate`- core trust evaluation
+- `GET https://api.atomlabs.app/license/verify?key=XYZ` - license validation
 
 ```
 
