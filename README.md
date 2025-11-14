@@ -153,8 +153,9 @@ Example output:
 
 Live at:
 
-```
-https://console.atomlabs.app/console
+``
+`![Console Overview](docs/img/lcac-console.png)
+
 ```
 
 <p align="center">
