@@ -39,8 +39,6 @@ The LCAC Governor API is served from:
 - `POST https://api.atomlabs.app/evaluate`- core trust evaluation
 - `GET https://api.atomlabs.app/license/verify?key=XYZ` - license validation
 
-```
-
 ---
 
 # Why LCAC Exists
