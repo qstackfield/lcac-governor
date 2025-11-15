@@ -712,7 +712,6 @@
 <p>This document explains how to deploy LCAC Governor in production:
 API, console, billing, Redis, and Cloudflare Tunnel.</p>
 <p>The instructions match your current production architecture exactly.</p>
-<p>⸻</p>
 <ol>
 <li>Deployment Architecture</li>
 </ol>
@@ -732,7 +731,6 @@ Cloudflare Tunnel  → api.atomlabs.app / console.atomlabs.app</p>
 <p>Your landing page:</p>
 <p>https://console.atomlabs.app/</p>
 <p>Everything runs through one FastAPI app + one Redis + one Tunnel.</p>
-<p>⸻</p>
 <ol>
 <li>System Requirements</li>
 </ol>
@@ -748,7 +746,6 @@ Cloudflare Tunnel  → api.atomlabs.app / console.atomlabs.app</p>
     •   Only Cloudflare Tunnel exposes the API
     •   Redis remains localhost-only
     •   No inbound ports required</p>
-<p>⸻</p>
 <ol>
 <li>Environment Variables</li>
 </ol>
@@ -763,7 +760,6 @@ STRIPE_WEBHOOK_SECRET=whsec_xxx</p>
 <p>LCAC_API_HOST=0.0.0.0
 LCAC_API_PORT=8079</p>
 <p>Your system already uses these correctly.</p>
-<p>⸻</p>
 <ol>
 <li>Redis Configuration</li>
 </ol>
@@ -778,7 +774,6 @@ LCAC_API_PORT=8079</p>
 <p>bind 127.0.0.1
 protected-mode yes
 maxmemory-policy allkeys-lru</p>
-<p>⸻</p>
 <ol>
 <li>Systemd Service</li>
 </ol>
@@ -806,7 +801,6 @@ WantedBy=multi-user.target</p>
 <p>Restart commands:</p>
 <p>sudo systemctl daemon-reexec
 sudo systemctl restart lcac-api</p>
-<p>⸻</p>
 <ol>
 <li>Cloudflare Tunnel</li>
 </ol>
@@ -827,7 +821,6 @@ credentials-file: /root/.cloudflared/e00fc3eb-ce73-4e11-8b5e-178c0a34ebae.json</
   no-chunked-encoding: true</p>
 <p>Restart:</p>
 <p>sudo systemctl restart cloudflared</p>
-<p>⸻</p>
 <ol>
 <li>Stripe Billing Deployment</li>
 </ol>
@@ -854,7 +847,6 @@ updated</p>
 <p>Your webhook endpoint:</p>
 <p>https://api.atomlabs.app/stripe/webhook</p>
 <p>Webhook secret is already set in your environment file.</p>
-<p>⸻</p>
 <ol>
 <li>SSL &amp; Security</li>
 </ol>
@@ -871,7 +863,6 @@ CORS restricted to:</p>
     •   TLS termination via Cloudflare
     •   Correct CORS
     •   Single origin policy</p>
-<p>⸻</p>
 <ol>
 <li>Backup &amp; Restore Strategy</li>
 </ol>
@@ -884,7 +875,6 @@ CORS restricted to:</p>
 /root/.cloudflared</p>
 <p>And optionally Redis snapshot:</p>
 <p>/var/lib/redis/dump.rdb</p>
-<p>⸻</p>
 <ol>
 <li>Scaling Strategy</li>
 </ol>
@@ -898,7 +888,6 @@ CORS restricted to:</p>
     •   stateful Redis backend
     •   shared billing engine</p>
 <p>Scaling is trivial.</p>
-<p>⸻</p>
 <ol>
 <li>High-Availability Deployment Pattern</li>
 </ol>
@@ -908,7 +897,6 @@ Node B: LCAC API (stateless clone)
 Node C: LCAC API (stateless clone)</p>
 <p>Cloudflare Tunnel: 3 connectors → same hostname</p>
 <p>Redis remains on one node unless you want clustering (not needed yet).</p>
-<p>⸻</p>
 <ol>
 <li>Monitoring</li>
 </ol>
@@ -926,7 +914,6 @@ GET /metrics</p>
     •   cpu / memory</p>
 <p>Grafana integration:</p>
 <p>curl -s https://api.atomlabs.app/metrics | jq .</p>
-<p>⸻</p>
 <ol>
 <li>Logs</li>
 </ol>
@@ -937,7 +924,6 @@ GET /metrics</p>
 <p>Stripe logs:
     •   visible via Stripe dashboard
     •   or log manually under /opt/lcac/logs (your system supports this)</p>
-<p>⸻</p>
 <ol>
 <li>Disaster Recovery</li>
 </ol>
@@ -951,31 +937,11 @@ GET /metrics</p>
 <li>Start lcac-api and cloudflared</li>
 </ol>
 <p>Recovery time: under 10 minutes.</p>
-<p>⸻</p>
-<ol>
-<li>Checklist for Production Release
-    •   API deployed
-    •   TLS via Cloudflare
-    •   Console deployed
-    •   Landing page deployed
-    •   Stripe live keys configured
-    •   Webhook live and validated
-    •   Redis working
-    •   SDK published (PyPI)
-    •   Documentation started (MkDocs)</li>
-</ol>
-<p>Next steps:
-    •   JS SDK
-    •   Go SDK
-    •   Admin panel
-    •   Automated trust summaries</p>
-<p>⸻</p>
 <ol>
 <li>Support</li>
 </ol>
 <p>For enterprise licensing or strategic partnership:</p>
 <p>lcac@atomlabs.app</p>
-<p>⸻</p>
 
 
 

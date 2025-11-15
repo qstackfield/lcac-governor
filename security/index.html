@@ -712,7 +712,6 @@
 <p>This document defines the full LCAC Governor security posture:
 architecture, access controls, data flow controls, and operational hardening.</p>
 <p>This is the version appropriate for enterprise briefings, compliance review, and pre-sales evaluation.</p>
-<p>⸻</p>
 <ol>
 <li>Overview</li>
 </ol>
@@ -725,7 +724,6 @@ architecture, access controls, data flow controls, and operational hardening.</p
     •   Ledger-based reasoning traceability
     •   Quota-based licensing to prevent abuse
     •   Single-tenant control plane per deployment</p>
-<p>⸻</p>
 <ol>
 <li>Data Flow Architecture</li>
 </ol>
@@ -738,7 +736,6 @@ architecture, access controls, data flow controls, and operational hardening.</p
     •   No prompt/output text is stored long-term (only hash + metadata stored).
     •   Redis is strictly local-only (127.0.0.1 binding).
     •   Cloudflare Tunnel is the only public exposure point.</p>
-<p>⸻</p>
 <ol>
 <li>API Surface</li>
 </ol>
@@ -755,7 +752,6 @@ architecture, access controls, data flow controls, and operational hardening.</p
 No administrative endpoints exist.
 No shell or system calls.
 No file execution.</p>
-<p>⸻</p>
 <ol>
 <li>Attack Surface Reduction</li>
 </ol>
@@ -775,7 +771,6 @@ protected-mode yes</p>
 https://console.atomlabs.app
 https://stripe.atomlabs.app</p>
 <p>Everything else receives HTTP 403.</p>
-<p>⸻</p>
 <ol>
 <li>Request Validation</li>
 </ol>
@@ -793,7 +788,6 @@ https://stripe.atomlabs.app</p>
     •   401 (invalid license)
     •   402 (quota exceeded)
     •   500 (internal)</p>
-<p>⸻</p>
 <ol>
 <li>License Enforcement Model</li>
 </ol>
@@ -811,7 +805,6 @@ expires</p>
 <p>Once quota is exceeded:</p>
 <p>POST /evaluate → 402 Payment Required</p>
 <p>No bypass mechanisms exist.</p>
-<p>⸻</p>
 <ol>
 <li>Reasoning Ledger</li>
 </ol>
@@ -833,7 +826,6 @@ lcac:trace:index</p>
     •   compliance traceability
     •   trust reproducibility
     •   forensic investigation</p>
-<p>⸻</p>
 <ol>
 <li>Cloudflare Security</li>
 </ol>
@@ -850,7 +842,6 @@ lcac:trace:index</p>
 console.atomlabs.app
 stripe.atomlabs.app</p>
 <p>resolve only to Cloudflare.</p>
-<p>⸻</p>
 <ol>
 <li>Stripe Security</li>
 </ol>
@@ -870,7 +861,6 @@ stripe_customer_id
 tier
 quota
 status</p>
-<p>⸻</p>
 <ol>
 <li>Console Security</li>
 </ol>
@@ -884,7 +874,6 @@ No sessions
 No tokens
 No tracking scripts</p>
 <p>All license handling happens client-side (localStorage).</p>
-<p>⸻</p>
 <ol>
 <li>Update Procedure (Safe Deployment)</li>
 </ol>
@@ -895,7 +884,6 @@ sudo systemctl daemon-reexec
 sudo systemctl restart lcac-api
 sudo systemctl restart cloudflared</p>
 <p>Cloudflare tunnel ensures no downtime.</p>
-<p>⸻</p>
 <ol>
 <li>Disaster Recovery</li>
 </ol>
@@ -910,7 +898,6 @@ sudo systemctl restart cloudflared</p>
 Restore above files
 Start lcac-api + cloudflared</p>
 <p>Recovery time: under 10 minutes.</p>
-<p>⸻</p>
 <ol>
 <li>Compliance Readiness</li>
 </ol>
@@ -920,7 +907,6 @@ Start lcac-api + cloudflared</p>
     •   FedRAMP low/moderate (can run inside GovCloud or isolated VPC)
     •   GDPR (no personal data stored except customer email for licenses)</p>
 <p>Additional enterprise controls can be layered on request.</p>
-<p>⸻</p>
 <ol>
 <li>Threat Model Summary</li>
 </ol>
@@ -933,13 +919,11 @@ Port scanning   No open ports
 Redis compromise    Local-only binding
 Tampering   Hash-chained ledger
 Billing fraud   Stripe-signed webhooks</p>
-<p>⸻</p>
 <ol>
 <li>Contact</li>
 </ol>
 <p>For enterprise licensing or integration partnerships:</p>
 <p>lcac@atomlabs.app</p>
-<p>⸻</p>
 
 
 

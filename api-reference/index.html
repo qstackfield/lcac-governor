@@ -708,48 +708,42 @@
 
   <h1>API Reference</h1>
 
-<p>LCAC API Reference
-Atom Labs · 2025</p>
-<p>⸻</p>
-<p>Base URL</p>
+<p>LCAC API Reference</p>
+<p>Atom Labs · 2025</p>
+<p>This page describes the LCAC API and all public endpoints.</p>
+<p>Base URL:</p>
 <p>https://api.atomlabs.app</p>
-<p>All endpoints are JSON-based and HTTPS-only.</p>
-<p>⸻</p>
+<p>All endpoints return JSON and require HTTPS.</p>
 <p>Authentication</p>
-<p>Free Tier</p>
-<p>If no license key is provided, LCAC automatically issues a trial key on first /evaluate.</p>
-<p>Licensed Tier</p>
-<p>Pass your key via header:</p>
-<p>X-License-Key: <key></p>
-<p>⸻</p>
+<p>If you do not send a license key, LCAC issues a trial key on your first /evaluate call.</p>
+<p>To use a license key:</p>
+<p>X-License-Key: YOUR_KEY_HERE</p>
 <p>Endpoints</p>
-<p>⸻</p>
 <ol>
 <li>POST /evaluate</li>
 </ol>
-<p>Runs a full cognitive integrity evaluation.</p>
-<p>Request</p>
+<p>Run a full LCAC evaluation on a prompt/output pair.</p>
+<p>Request example:</p>
 <p>{
   "prompt": "Explain quantum gravity to a child.",
   "output": "It is like magic glue in space."
 }</p>
-<p>Response</p>
+<p>Response example:</p>
 <p>{
   "license": "trial_129ab3ac",
   "trace_id": "d511ede8-39cd-4694-8f48-32a65d36a91f",
   "trust": 0.612,
   "variance": 0.004,
   "verdict": "unstable",
-  "recommendation": "Cognitive drift detected. Reduce context overlap.",
+  "recommendation": "Cognitive drift detected.",
   "severity": { "level": 3, "label": "critical" },
-  "insight": "LCAC observed reasoning state 'UNSTABLE'..."
+  "insight": "LCAC observed reasoning state 'UNSTABLE'."
 }</p>
-<p>⸻</p>
 <ol>
 <li>GET /overview</li>
 </ol>
-<p>Unified cognitive state.</p>
-<p>Response</p>
+<p>Returns the current LCAC stability state.</p>
+<p>Example:</p>
 <p>{
   "trust": 0.598,
   "variance": 0.002,
@@ -759,105 +753,103 @@ Atom Labs · 2025</p>
   "insight": "Monitoring cognitive drift.",
   "ledger_count": 59
 }</p>
-<p>⸻</p>
 <ol>
 <li>GET /metrics</li>
 </ol>
-<p>Provides incremental trust/variance metrics for dashboards.</p>
-<p>Response</p>
+<p>Returns incremental metrics for dashboards.</p>
+<p>Example:</p>
 <p>{
   "ts": "2025-11-14T05:01:12Z",
   "trust_score": 0.607,
   "variance": 0.001,
   "stability": 0.999,
   "ledger_count": 22,
-  "summary": "UNSTABLE • trust=0.607 var=0.001"
+  "summary": "UNSTABLE - trust=0.607 var=0.001"
 }</p>
-<p>⸻</p>
 <ol>
 <li>GET /info</li>
 </ol>
-<p>System and runtime metadata.</p>
-<p>Response</p>
+<p>Returns system/runtime metadata.</p>
+<p>Example:</p>
 <p>{
   "product": "LCAC Cognitive Integrity Framework",
-  "version": "1.0.0-Insight",
+  "version": "1.0.0",
   "platform": "Linux",
   "mode": "HOLD",
-  "trust_score": "0.607",
+  "trust_score": 0.607,
   "uptime_sec": 12402.4,
   "cpu": 12.4,
   "memory": 22.7,
   "prices": {
-    "starter": "price_XXXX",
-    "pro": "price_YYYY",
-    "enterprise": "price_ZZZZ"
+    "starter": "price_xxx",
+    "pro": "price_yyy",
+    "enterprise": "price_zzz"
   }
 }</p>
-<p>⸻</p>
 <ol>
 <li>GET /license/verify</li>
 </ol>
-<p>Validate a key or retrieve metadata.</p>
-<p>Request</p>
+<p>Validate a license key.</p>
+<p>Example:</p>
 <p>GET /license/verify?key=trial_abc123</p>
-<p>Response</p>
+<p>Response:</p>
 <p>{
   "ok": true,
   "license": {
     "tier": "trial",
-    "quota": "1000",
-    "used": "22",
+    "quota": 1000,
+    "used": 22,
     "status": "active"
   }
 }</p>
-<p>⸻</p>
 <ol>
 <li>POST /stripe/checkout</li>
 </ol>
-<p>Creates a Stripe checkout session.</p>
-<p>Request</p>
+<p>Create a Stripe Checkout session.</p>
+<p>Starter = one-time payment
+Pro = subscription
+Enterprise = contact-only</p>
+<p>Request:</p>
 <p>{
   "tier": "starter",
   "email": "user@example.com"
 }</p>
-<p>Response</p>
+<p>Response:</p>
 <p>{
   "url": "https://checkout.stripe.com/c/session/abc123"
 }</p>
-<p>⸻</p>
 <ol>
 <li>POST /stripe/webhook</li>
 </ol>
-<p>Used internally by Stripe to issue licenses.
-Not used by end-users directly.</p>
-<p>⸻</p>
+<p>Stripe webhook endpoint used internally for:
+    •   license creation
+    •   quota management
+    •   subscription updates</p>
+<p>Not used directly by end-users.</p>
 <p>Error Formats</p>
-<p>All LCAC errors follow:</p>
+<p>Generic error:</p>
 <p>{ "error": "message" }</p>
-<p>Quota errors:</p>
-<p>{
-  "detail": "Quota exceeded. Purchase tokens to continue."
-}</p>
-<p>Invalid or expired license:</p>
-<p>{
-  "detail": "Invalid or expired license key"
-}</p>
-<p>⸻</p>
+<p>Quota exceeded:</p>
+<p>{ "detail": "Quota exceeded. Purchase tokens to continue." }</p>
+<p>Invalid license:</p>
+<p>{ "detail": "Invalid or expired license key" }</p>
 <p>Rate Limits</p>
-<p>LCAC applies soft rate limits:
-    •   Trial: 1,000 evals / 7 days
-    •   Starter: 5,000 evals / pack
-    •   Pro: 25,000 evals / month
-    •   Enterprise: negotiable</p>
-<p>⸻</p>
+<p>Trial: 1000 evaluations per 7 days
+Starter: 5000 evaluations
+Pro: 25000 per month
+Enterprise: negotiated</p>
 <p>Recommended Headers</p>
 <p>Content-Type: application/json
-X-License-Key: <your-key></p>
-<p>⸻</p>
-<p>That’s it.</p>
-<p>Minimal, stable, clean.</p>
-<p>⸻</p>
+X-License-Key: YOUR_KEY
+Accept: application/json</p>
+<p>Summary</p>
+<p>Use:
+    •   /evaluate for scoring
+    •   /overview and /metrics for dashboards
+    •   /info for system health
+    •   /license/verify for key validation
+    •   /stripe/checkout for upgrades</p>
+<p>This document is intentionally minimal and stable for long-term public use.</p>
 
 
 

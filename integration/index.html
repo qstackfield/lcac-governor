@@ -710,7 +710,6 @@
 
 <p>LCAC Integration Guide
 Atom Labs · 2025</p>
-<p>⸻</p>
 <ol>
 <li>Overview</li>
 </ol>
@@ -732,7 +731,6 @@ Atom Labs · 2025</p>
     •   block
     •   require human approval
     •   modify the workflow</p>
-<p>⸻</p>
 <ol>
 <li>Basic HTTP Integration</li>
 </ol>
@@ -747,7 +745,6 @@ Atom Labs · 2025</p>
 <p>data = res.json()</p>
 <p>if data["verdict"] == "unstable":
     raise Exception("HIGH RISK — LCAC blocked unsafe reasoning")</p>
-<p>⸻</p>
 <ol>
 <li>Integration in Agent Pipelines</li>
 </ol>
@@ -767,7 +764,6 @@ elif result["severity"]["level"] == 2:
     agent.log_warning(result["insight"])
 else:
     agent.continue_workflow()</p>
-<p>⸻</p>
 <ol>
 <li>Integration into RAG Systems</li>
 </ol>
@@ -779,7 +775,6 @@ LCAC acts as a stability gate:</p>
 risk = governor.evaluate(question, llm_answer)</p>
 <p>if risk["verdict"] != "stable":
     return "Unable to answer safely — review required."</p>
-<p>⸻</p>
 <ol>
 <li>Integration into API Backends</li>
 </ol>
@@ -795,7 +790,6 @@ def answer(req: Req):
 
 return {"answer": model_out, "lcac": risk}
 </code></pre>
-<p>⸻</p>
 <ol>
 <li>Infrastructure-Level Integration (Gatekeeper Mode)</li>
 </ol>
@@ -810,7 +804,6 @@ LLM Engine (OpenAI, Claude, Llama, Groq)</p>
     •   Drift prevention
     •   Usage quota enforcement
     •   Trust analytics</p>
-<p>⸻</p>
 <ol>
 <li>Batch Evaluation</li>
 </ol>
@@ -824,7 +817,6 @@ for p, o in zip(prompts, outputs):
     •   dataset audits
     •   fine-tune evaluation
     •   drift benchmarking</p>
-<p>⸻</p>
 <ol>
 <li>Architecture Reference</li>
 </ol>
@@ -837,7 +829,6 @@ for p, o in zip(prompts, outputs):
 Action Allowed? → YES / NO / ESCALATE</p>
 <p>LCAC does not change your model.
 It governs its behavior.</p>
-<p>⸻</p>
 <ol>
 <li>Summary</li>
 </ol>
@@ -855,7 +846,6 @@ It governs its behavior.</p>
     •   Safety enforcement
     •   Enterprise monitoring</p>
 <p>Use LCAC anywhere reasoning integrity matters.</p>
-<p>⸻</p>
 
 
 

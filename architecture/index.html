@@ -710,7 +710,6 @@
 
 <p>LCAC Governor — System Architecture Overview
 Atom Labs · 2025</p>
-<p>⸻</p>
 <ol>
 <li>Purpose</li>
 </ol>
@@ -723,7 +722,6 @@ Atom Labs · 2025</p>
     •   Governance modes (HOLD / ELEVATE / LOCKDOWN)</p>
 <p>LCAC does not replace a model.
 It governs how it behaves.</p>
-<p>⸻</p>
 <ol>
 <li>High-Level Architecture (Text Diagram)</li>
 </ol>
@@ -758,7 +756,6 @@ It governs how it behaves.</p>
      ┌────────────────────────┐
      │ Console Dashboard UI   │ SaaS front-end
      └────────────────────────┘</p>
-<p>⸻</p>
 <ol>
 <li>Component Breakdown</li>
 </ol>
@@ -776,7 +773,6 @@ It governs how it behaves.</p>
     •   Zero-model dependency
     •   Stateless evaluation
     •   Consistent response schema</p>
-<p>⸻</p>
 <p>3.2 Trust Engine</p>
 <p>The trust engine computes:
     •   Base trust (lcac:trust:score)
@@ -797,7 +793,6 @@ It governs how it behaves.</p>
     •   severity
     •   insight
     •   recommendation</p>
-<p>⸻</p>
 <p>3.3 Variance &amp; Drift Analyzer</p>
 <p>Evaluates:
     •   Short-term deviation
@@ -805,7 +800,6 @@ It governs how it behaves.</p>
     •   Variance delta
     •   Drift vectors (directional trust change)</p>
 <p>All drift logic is model-agnostic.</p>
-<p>⸻</p>
 <p>3.4 Ledger &amp; Trace Chain</p>
 <p>Each evaluation generates:
     •   trace_id
@@ -819,7 +813,6 @@ lcac:trace:index   (list)</p>
     •   Tamper resistance
     •   Sequential continuity
     •   Deterministic auditing</p>
-<p>⸻</p>
 <p>3.5 Unified /overview Endpoint</p>
 <p>Aggregates:
     •   Trust
@@ -835,7 +828,6 @@ lcac:trace:index   (list)</p>
     •   Console dashboard
     •   SDK convenience methods
     •   Health monitoring</p>
-<p>⸻</p>
 <ol>
 <li>License &amp; Billing Layer</li>
 </ol>
@@ -857,7 +849,6 @@ stripe_customer</p>
     •   Quota grants
     •   Subscription cancellation
     •   Payment failures</p>
-<p>⸻</p>
 <ol>
 <li>Console Architecture</li>
 </ol>
@@ -880,7 +871,6 @@ stripe_customer</p>
     •   /overview
     •   /evaluate</p>
 <p>No backend rendering is required.</p>
-<p>⸻</p>
 <ol>
 <li>Dependencies &amp; Runtime</li>
 </ol>
@@ -895,7 +885,6 @@ stripe_customer</p>
     •   Chart.js for graphs</p>
 <p>Storage:
     •   Redis DB 15 (configurable)</p>
-<p>⸻</p>
 <ol>
 <li>Governance Modes
     •   HOLD
@@ -908,9 +897,9 @@ Extreme drift or injection detected
 </ol>
 <p>Modes are written to:</p>
 <p>lcac:governance:mode</p>
-<p>⸻</p>
 <ol>
-<li>Security Considerations
+<li>
+<p>Security Considerations
     •   All API traffic forced through TLS (Cloudflare Tunnel)
     •   CORS locked to:
     •   console.atomlabs.app
@@ -921,11 +910,11 @@ Extreme drift or injection detected
     •   No plaintext exposure
     •   Hash chaining
     •   Status flags
-    •   Expiry logic</li>
-</ol>
-<p>⸻</p>
-<ol>
-<li>Scaling Paths</li>
+    •   Expiry logic</p>
+</li>
+<li>
+<p>Scaling Paths</p>
+</li>
 </ol>
 <p>Future extensions:
     •   Multi-LLM adapters
@@ -935,7 +924,6 @@ Extreme drift or injection detected
     •   Enterprise audit dashboards
     •   Multi-tenant license separation
     •   SDKs for JS/Go/Rust</p>
-<p>⸻</p>
 <ol>
 <li>Summary</li>
 </ol>
