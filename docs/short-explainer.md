@@ -1,4 +1,4 @@
-What I Built: A Cognitive Governor for AI Systems
+## What I Built: A Cognitive Governor for AI Systems
 
 Every major AI failure in the last 18 months has had the same root cause:
 The model wasn’t wrong. The reasoning layer broke.
