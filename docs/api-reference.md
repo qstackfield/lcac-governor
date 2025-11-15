@@ -1,156 +1,207 @@
-# LCAC API Reference
+LCAC API Reference
 
-This document describes the production LCAC API running at:
+Atom Labs · 2025
+
+This page describes the LCAC API and all public endpoints.
+
+Base URL:
 
 https://api.atomlabs.app
 
-LCAC is a cognitive governance engine that evaluates model outputs,
-assigns trust scores, monitors drift, and enforces token quotas
-using Stripe-backed licensing.
+All endpoints return JSON and require HTTPS.
 
-------------------------------------------------------------
-# Root Endpoints
-------------------------------------------------------------
 
-GET /
-Basic service heartbeat.
+Authentication
+
+If you do not send a license key, LCAC issues a trial key on your first /evaluate call.
+
+To use a license key:
+
+X-License-Key: YOUR_KEY_HERE
+
+
+
+Endpoints
+
+1. POST /evaluate
+
+Run a full LCAC evaluation on a prompt/output pair.
+
+Request example:
+
+{
+  "prompt": "Explain quantum gravity to a child.",
+  "output": "It is like magic glue in space."
+}
+
+Response example:
+
+{
+  "license": "trial_129ab3ac",
+  "trace_id": "d511ede8-39cd-4694-8f48-32a65d36a91f",
+  "trust": 0.612,
+  "variance": 0.004,
+  "verdict": "unstable",
+  "recommendation": "Cognitive drift detected.",
+  "severity": { "level": 3, "label": "critical" },
+  "insight": "LCAC observed reasoning state 'UNSTABLE'."
+}
+
+
+
+2. GET /overview
+
+Returns the current LCAC stability state.
+
+Example:
+
+{
+  "trust": 0.598,
+  "variance": 0.002,
+  "verdict": "unstable",
+  "mode": "HOLD",
+  "persona": "default",
+  "insight": "Monitoring cognitive drift.",
+  "ledger_count": 59
+}
+
+
+
+3. GET /metrics
+
+Returns incremental metrics for dashboards.
+
+Example:
+
+{
+  "ts": "2025-11-14T05:01:12Z",
+  "trust_score": 0.607,
+  "variance": 0.001,
+  "stability": 0.999,
+  "ledger_count": 22,
+  "summary": "UNSTABLE - trust=0.607 var=0.001"
+}
+
+
+
+4. GET /info
+
+Returns system/runtime metadata.
+
+Example:
+
+{
+  "product": "LCAC Cognitive Integrity Framework",
+  "version": "1.0.0",
+  "platform": "Linux",
+  "mode": "HOLD",
+  "trust_score": 0.607,
+  "uptime_sec": 12402.4,
+  "cpu": 12.4,
+  "memory": 22.7,
+  "prices": {
+    "starter": "price_xxx",
+    "pro": "price_yyy",
+    "enterprise": "price_zzz"
+  }
+}
+
+
+
+5. GET /license/verify
+
+Validate a license key.
+
+Example:
+
+GET /license/verify?key=trial_abc123
 
 Response:
-ok: true
-service: "LCAC API"
-message: "Landing endpoint active."
 
-------------------------------------------------------------
-# Evaluate
-------------------------------------------------------------
+{
+  "ok": true,
+  "license": {
+    "tier": "trial",
+    "quota": 1000,
+    "used": 22,
+    "status": "active"
+  }
+}
 
-POST /evaluate
-Evaluates a prompt/output pair and returns trust, drift insight,
-severity levels, and ledger hash chaining for auditability.
 
-Headers:
-X-License-Key: <optional license key>
 
-Body:
-prompt: string
-output: string
+6. POST /stripe/checkout
 
-Returns:
-license: trial key or existing key
-trust: float 0–1
-variance: float
-verdict: stable | watch | unstable
-recommendation: human-readable guidance
-explanation: reasoning behind verdict
-severity: {level, label}
-insight: summary string
-hash_self: ledger hash (SHA-256)
-trace_id: unique event ID
+Create a Stripe Checkout session.
 
-------------------------------------------------------------
-# Metrics
-------------------------------------------------------------
+Starter = one-time payment
+Pro = subscription
+Enterprise = contact-only
 
-GET /metrics
-Lightweight endpoint for console charting.
+Request:
 
-Returns:
-ts: timestamp
-trust_score: float
-variance: float
-stability: float or null
-ledger_count: int
-summary: string or null
+{
+  "tier": "starter",
+  "email": "user@example.com"
+}
 
-------------------------------------------------------------
-# Overview
-------------------------------------------------------------
+Response:
 
-GET /overview
-Main console data feed.
+{
+  "url": "https://checkout.stripe.com/c/session/abc123"
+}
 
-Returns:
-ts
-persona
-mode
-trust
-variance
-verdict
-recommendation
-insight
-ledger_count
-summary
 
-------------------------------------------------------------
-# Info
-------------------------------------------------------------
 
-GET /info
-System-level metadata for console header.
+7. POST /stripe/webhook
 
-Returns:
-product
-version
-platform
-mode
-trust_score
-last_license
-uptime_sec
-cpu
-memory
-prices: {starter, pro, enterprise}
+Stripe webhook endpoint used internally for:
+	•	license creation
+	•	quota management
+	•	subscription updates
 
-------------------------------------------------------------
-# License Verification
-------------------------------------------------------------
+Not used directly by end-users.
 
-GET /license/verify?key=<license_key>
 
-Returns:
-ok: true/false
-license: {tier, quota, used, status, created, expires}
+Error Formats
 
-------------------------------------------------------------
-# Stripe Checkout
-------------------------------------------------------------
+Generic error:
 
-POST /stripe/checkout
-Creates a live Stripe Checkout Session.
+{ "error": "message" }
 
-Body:
-tier: starter | pro | enterprise
-email: billing email
+Quota exceeded:
 
-Returns:
-url: Stripe session URL
+{ "detail": "Quota exceeded. Purchase tokens to continue." }
 
-------------------------------------------------------------
-# Stripe Webhook
-------------------------------------------------------------
+Invalid license:
 
-POST /stripe/webhook
-Receives validated Stripe events.
+{ "detail": "Invalid or expired license key" }
 
-Events handled:
-checkout.session.completed
-invoice.payment_failed
-customer.subscription.deleted
 
-The webhook issues:
-lcac:license:<email_normalized>
-with quota, status, stripe_customer_id, timestamps.
 
-------------------------------------------------------------
-# Rate Limits
-------------------------------------------------------------
+Rate Limits
 
-Evaluation limited by license quotas.
-All other endpoints unrestricted.
+Trial: 1000 evaluations per 7 days
+Starter: 5000 evaluations
+Pro: 25000 per month
+Enterprise: negotiated
 
-------------------------------------------------------------
-# Error Handling
-------------------------------------------------------------
 
-401 - invalid or expired license
-402 - quota exceeded
-500 - evaluation engine internal error
+Recommended Headers
+
+Content-Type: application/json
+X-License-Key: YOUR_KEY
+Accept: application/json
+
+
+
+Summary
+
+Use:
+	•	/evaluate for scoring
+	•	/overview and /metrics for dashboards
+	•	/info for system health
+	•	/license/verify for key validation
+	•	/stripe/checkout for upgrades
+
+This document is intentionally minimal and stable for long-term public use.

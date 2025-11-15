@@ -1,0 +1,28 @@
+site_name: LCAC Governor Docs
+site_url: https://qstackfield.github.io/lcac-governor
+repo_url: https://github.com/qstackfield/lcac-governor
+
+theme:
+  name: material
+  features:
+    - navigation.expand
+    - navigation.top
+    - navigation.sections
+    - content.code.copy
+    - content.code.annotate
+
+nav:
+  - Overview: index.md
+  - API Reference: api-reference.md
+  - Architecture:
+      - System Architecture: architecture.md
+      - Governance Model: governance-model.md
+      - LCAC Theory: lcac-theory.md
+  - SDK:
+      - SDK Overview: sdk.md
+      - Python Usage: sdk-usage.md
+      - API Models: sdk-reference.md
+  - Integration Guide: integration.md
+  - Deployment: deployment.md
+  - Security Model: security.md
+  - Glossary: glossary.md
