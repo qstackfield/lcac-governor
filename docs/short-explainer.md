@@ -51,6 +51,6 @@ API: https://api.atomlabs.app
 Console: https://console.atomlabs.app/console
 SDK: https://pypi.org/project/lcac-sdk/
 
-If you’re building autonomous systems, agents, safety layers, or enterprise AI infrastructure or you’re responsible for the failures when those systems drift — this will matter to you.
+If you’re building autonomous systems, agents, safety layers, or enterprise AI infrastructure or you’re responsible for the failures when those systems drift, this will matter to you.
 
 If you want a walkthrough, architecture deep dive, or acquisition conversation, message me.
