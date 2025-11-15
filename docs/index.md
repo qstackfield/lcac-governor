@@ -1,4 +1,4 @@
-# LCAC Governor — Cognitive Integrity Framework
+# LCAC Governor - Cognitive Integrity Framework
 
 Welcome to the official documentation for **LCAC Governor**, a cognitive integrity engine designed to sit in front of any LLM, agent, or reasoning system.
 
@@ -26,7 +26,7 @@ Models change their reasoning over time under context pressure.
 Instability within output samples.
 
 ### Verdicts
-Stable / Watch / Unstable — derived from trust + variance.
+Stable / Watch / Unstable - derived from trust + variance.
 
 ### Insights
 Human-readable explanations of reasoning integrity state.
