@@ -1,7 +1,7 @@
-LCAC Governor – Cognitive Integrity Framework
+LCAC Governor - Cognitive Integrity Framework
 
 LCAC Governor is a cognitive integrity layer designed to sit in front of any LLM, agent pipeline, or autonomous reasoning system.
-It does not replace your models – it governs them.
+It does not replace your models - it governs them.
 
 LCAC continuously evaluates outputs for:
 	•	Trust degradation
@@ -32,11 +32,11 @@ Production API base
 https://api.atomlabs.app
 
 Key endpoints
-	•	GET /info – system health, uptime, prices
-	•	GET /overview – trust, variance, verdict, insight
-	•	GET /metrics – telemetry stream (trust / variance / stability)
-	•	POST /evaluate – core trust evaluation
-	•	GET /license/verify?key=XYZ – license introspection
+	•	GET /info - system health, uptime, prices
+	•	GET /overview - trust, variance, verdict, insight
+	•	GET /metrics - telemetry stream (trust / variance / stability)
+	•	POST /evaluate - core trust evaluation
+	•	GET /license/verify?key=XYZ - license introspection
 
 Console dashboard
 
@@ -58,7 +58,7 @@ LCAC addresses this by:
 	•	Surfacing a clear verdict (“stable / watch / unstable”).
 	•	Providing insight and recommendations before failure cascades.
 
-LCAC is a governor – a control layer that wraps your models with cognitive telemetry and guardrails.
+LCAC is a governor - a control layer that wraps your models with cognitive telemetry and guardrails.
 
 ⸻
 
@@ -113,7 +113,7 @@ Response
   "severity": { "level": 3, "label": "critical" },
   "recommendation": "Cognitive drift detected. Reduce context overlap and consider prompt rebalancing or retraining.",
   "explanation": "Verdict 'unstable' based on trust=0.609 and variance.",
-  "insight": "LCAC observed reasoning state 'UNSTABLE' at 2025-11-14T22:47:07.659432 — Cognitive drift detected. Reduce context overlap and consider prompt rebalancing or retraining."
+  "insight": "LCAC observed reasoning state 'UNSTABLE' at 2025-11-14T22:47:07.659432 - Cognitive drift detected. Reduce context overlap and consider prompt rebalancing or retraining."
 }
 
 
