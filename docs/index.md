@@ -223,8 +223,6 @@ It shows:
 	•	Quick evaluate form
 	•	Stripe-backed upgrade buttons
 
-Example image include (if you have it):
-
 ![LCAC Console](img/console.png)
 
 Update the path to whatever you actually use in docs/img.
