@@ -13,6 +13,7 @@ So I built the layer that fixes it.
 
 LCAC (Least-Context Access Control) is a cognitive governor that sits in front of any model or agent.
 It evaluates every reasoning step through a unified integrity engine and returns:
+
 	•	trust score
 	•	variance / drift signal
 	•	verdict
@@ -27,6 +28,7 @@ This is not an RAG tweak.
 This is a reasoning-layer security system.
 
 Enterprises can finally see:
+
 	•	When an agent deviates from intended logic
 	•	When a chain-of-thought becomes unstable
 	•	When context is misaligned
