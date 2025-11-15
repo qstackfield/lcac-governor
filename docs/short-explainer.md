@@ -3,7 +3,7 @@
 Every major AI failure in the last 18 months has had the same root cause:
 The model wasn’t wrong. The reasoning layer broke.
 
-LLMs drift.
+#LLMs drift.#
 They degrade under long context.
 They become unstable under tools.
 They collapse under multi-agent feedback loops.
