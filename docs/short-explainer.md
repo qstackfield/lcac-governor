@@ -15,7 +15,7 @@ So I built the layer that fixes it.
 
 ---
 
-## LCAC — Least-Context Access Control
+## LCAC - Least-Context Access Control
 
 LCAC is a cognitive governor that sits in front of any model or agent.  
 It evaluates reasoning steps through a unified integrity engine and returns:
