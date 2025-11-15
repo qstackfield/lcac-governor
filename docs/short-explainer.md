@@ -71,7 +71,7 @@ Because detecting drift isn’t enough, LCAC includes:
 
 ---
 
-If you’re building autonomous systems, agents, safety layers, or enterprise AI infrastructure —  
-or if you’re responsible for the failures when those systems drift — this matters.
+If you’re building autonomous systems, agents, safety layers, or enterprise AI infrastructure -  
+or if you’re responsible for the failures when those systems drift, this matters.
 
 If you want a walkthrough, architecture deep dive, or acquisition conversation, message me directly.
