@@ -13,7 +13,7 @@ LCAC provides:
 - Quota + license governance
 - A full SaaS console
 
-`![Console Overview](docs/img/lcac-console.png)
+![Console Overview](docs/img/lcac-console.png)
 
 ---
 
