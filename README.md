@@ -153,8 +153,8 @@ Example output:
 
 Live at:
 
-``
-`![Console Overview](docs/img/lcac-console.png)
+
+![Console Overview](docs/img/lcac-console.png)
 
 
 
