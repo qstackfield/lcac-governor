@@ -36,6 +36,7 @@ Enterprises can finally see:
 	•	When teams or tools amplify drift in feedback loops
 
 And because visibility isn’t enough, LCAC includes:
+
 	•	license system
 	•	usage quotas
 	•	SaaS console
