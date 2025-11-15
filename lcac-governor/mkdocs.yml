@@ -1,0 +1,52 @@
+site_name: LCAC Governor Documentation
+site_url: https://qstackfield.github.io/lcac-governor/
+site_author: Quinton Stackfield
+repo_name: qstackfield/lcac-governor
+repo_url: https://github.com/qstackfield/lcac-governor
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: blue
+      accent: light blue
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.tabs.link
+    - content.code.annotate
+    - navigation.indexes
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.arithmatex
+  - pymdownx.snippets
+
+nav:
+  - Overview: index.md
+  - Getting Started:
+      - Quickstart: getting-started.md
+      - Python SDK: sdk/python.md
+      - JavaScript SDK: sdk/javascript.md
+  - API:
+      - Reference: api-reference.md
+      - Governance Model: governance-model.md
+  - Architecture:
+      - System Architecture: architecture.md
+  - Examples:
+      - Basic Usage: examples/basic.md
+      - Batch Evaluation: examples/batch-eval.md
+      - Risk Analysis: examples/risk-analysis.md
